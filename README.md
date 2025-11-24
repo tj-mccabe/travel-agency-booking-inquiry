@@ -17,17 +17,6 @@ My first personal web development project: A responsive travel booking inquiry w
 - Tools: VS Code / any code editor
 - Design: Flexbox, responsive media queries
 
-📂 Project Structure
-
-/project-root
-│
-├─ index.html
-├─ contact.html
-├─ contact.css
-├─ contact.js
-├─ images/ (logo, flags, favicon)
-└─ README.md
-
 🚀 How to Run
 
 1. Clone the repository:
