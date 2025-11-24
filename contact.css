@@ -1,0 +1,252 @@
+/* Background gradient for body */
+body {
+  background: linear-gradient(to bottom, #8ef2ff, #c9f6ff); 
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; 
+}
+
+/* Sticky navigation bar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: lightskyblue;
+  padding: 15px 30px;
+}
+
+.navbar img {
+  width: 20%;
+  height: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #2C3E50;
+}
+
+/* Heading styling */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-top: 30px;
+}
+
+/* Form container with padding and box shadow */
+.form-container {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form elements margin and padding */
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px 0;
+  font-weight: bold;
+}
+
+/* Input, select, and textarea styling */
+input, select, textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  transition: border-color 0.3s ease;
+}
+
+/* Focused input, select, and textarea styling */
+input:focus, select:focus, textarea:focus {
+  border-color: #00796b;
+  outline: none;
+}
+
+/* Textarea height */
+textarea {
+  height: 100px;
+}
+
+/* Checkbox container styling */
+.checkbox-container {
+  display: flex;
+  align-items: center; 
+  margin-top: 30px;
+}
+
+.checkbox-container input {
+  margin-right: 15px;  
+  width: auto; 
+}
+
+.checkbox-container label {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+/* Addon section styles */
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+/* Addon container and label styles */
+.addon-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addon-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+.addon-label input[type="checkbox"] {
+  margin-right: 10px;
+  width: auto;
+}
+
+/* Button styling */
+button {
+  padding: 12px 25px;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #0099cc;
+}
+
+/* Custom dropdown styling */
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin-bottom: 10px;
+}
+
+.custom-dropdown-selected {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-dropdown-options {
+  display: none;
+  position: absolute;
+  width: 100%;
+  border: 1px solid #ccc;
+  background-color: white;
+  z-index: 10;
+}
+
+.custom-dropdown-option {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.custom-dropdown-option:hover {
+  background-color: #f1f1f1;
+}
+
+.custom-dropdown.open .custom-dropdown-options {
+  display: block;
+}
+
+/* Communication mode dropdown */
+#commMode {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin-bottom: 10px;
+}
+
+/* Flag icon styling */
+.flag-icon {
+  width: 24px; 
+  height: auto; 
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  nav ul li {
+    display: block;
+    margin: 5px 0;
+  }
+}
+
+/* Asterisk for required fields */
+label[for="name"]::after,
+label[for="email"]::after,
+label[for="phone"]::after,
+label[for="destination"]::after,
+label[for="travelDate"]::after,
+label[for="travellers"]::after,
+label[for="terms"]::after {   
+  content: " *";  
+  color: red;  
+  font-weight: bold; 
+}
+
+/* Price summary styling */
+.price-summary {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2a9d8f; 
+}
+
+.flag-img {
+  width: 24px;  
+  height: auto;
+  margin-right: 8px;  
+  vertical-align: middle; 
+}
