@@ -1,145 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Booking Inquiry – Travel Agency</title>
-  <link rel="stylesheet" href="contact.css" />
-  <link rel="icon" href="images/favicon.jpg" type="image/jpeg">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <style>
-    /* Addon options container styling */
-    .addon-container {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    /* Label for add-ons styling */
-    .addon-label {
-      display: flex;
-      align-items: center;
-      margin-bottom: 5px;
-    }
-    /* Checkbox within add-ons styling */
-    .addon-label input[type="checkbox"] {
-      margin-right: 10px;
-      width: auto;
-    }
-    /* Price summary styling */
-    .price-summary {
-      margin-top: 20px;
-      font-size: 16px;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Inquiry – Travel Agency</title>
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="icon" href="images/favicon.jpg" type="image/jpeg">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Addon options container styling */
+        .addon-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        /* Label for add-ons styling */
+        .addon-label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        /* Checkbox within add-ons styling */
+        .addon-label input[type="checkbox"] {
+            margin-right: 10px;
+            width: auto;
+        }
+        /* Price summary styling */
+        .price-summary {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        /* Phone input container */
+        .phone-container {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        .phone-container select {
+            width: 120px;
+            flex-shrink: 0;
+        }
+        .phone-container input {
+            flex: 1;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <header>
-    <nav class="navbar">
-        <img src="images/logo.png" alt="Next Stop Travel logo">
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <!-- Page title -->
+    <h1>Booking Inquiry</h1>
 
-  <!-- Page title -->
-  <h1>Booking Inquiry</h1>
-  
-  <div class="form-container">
-    <form id="bookingForm">
+    <div class="form-container">
+        <form id="bookingForm">
+            <!-- Personal details input fields -->
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
 
-      <!-- Personal details input fields -->
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="phone" 
-             pattern="^\+?[1-9]\d{6,14}$" 
-             placeholder="e.g. +1234567890"
-             required>
-      
-      <!-- Destination dropdown -->
-      <label for="destination">Destination:</label>
-      <div id="destinationDropdown" class="custom-dropdown">
-        <div class="custom-dropdown-selected">
-          <span>-- Select a Destination --</span>
-          <span class="arrow">&#x25BC;</span>
-        </div>
-        <div class="custom-dropdown-options"></div>
-      </div>
-      
-      <!-- Display flag next to selected destination -->
-      <div id="flagDisplay"></div>
-      
-      <!-- Travel date -->
-      <label for="travelDate">Travel Date:</label>
-      <input type="date" id="travelDate" name="travelDate" required>
-      <div id="dateNote" style="font-size: 14px; color: grey;"></div>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
 
-      <!-- Number of travellers -->
-      <label for="travellers">Number of Travellers:</label>
-      <input type="number" id="travellers" name="travellers" min="1" max="10" required>
-      
-      <!-- Special requests -->
-      <label for="specialRequests">Special Requests:</label>
-      <textarea id="specialRequests" name="specialRequests"></textarea>
-      
-      <!-- Preferred communication method -->
-      <label for="commMode">Preferred Mode of Communication:</label>
-      <select id="commMode" name="commMode">
-        <option value="email">Email</option>
-        <option value="phone">Phone Call</option>
-        <option value="text">Text Message</option>
-      </select>
-      
-      <!-- Emergency contact number -->
-      <label for="emergencyContact">Emergency Contact Number:</label>
-      <input type="tel" id="phone" name="phone" 
-             pattern="^\+?[1-9]\d{6,14}$" 
-             placeholder="e.g. +1234567890">
-      
-      <!-- Add-on options -->
-      <fieldset>
-        <legend>Add-ons (per traveller):</legend>
-        <div class="addon-container">
-          <label class="addon-label">
-            <input type="checkbox" class="addon" value="insurance" id="insurance">
-            <span>Travel Insurance (+£50)</span>
-          </label>
-          <label class="addon-label">
-            <input type="checkbox" class="addon" value="tour" id="tour">
-            <span>Guided City Tour (+£100)</span>
-          </label>
-          <label class="addon-label">
-            <input type="checkbox" class="addon" value="meals" id="meal">
-            <span>Premium Meals (+£70)</span>
-          </label>
-        </div>
-      </fieldset>
+            <label for="phone">Phone Number:</label>
+            <div class="phone-container">
+                <select id="countryCode" name="countryCode" required>
+                    <option value="+1">+1 (US/CA)</option>
+                    <option value="+44">+44 (UK)</option>
+                    <option value="+33">+33 (FR)</option>
+                    <option value="+39">+39 (IT)</option>
+                    <option value="+34">+34 (ES)</option>
+                    <option value="+31">+31 (NL)</option>
+                    <option value="+81">+81 (JP)</option>
+                    <option value="+66">+66 (TH)</option>
+                    <option value="+82">+82 (KR)</option>
+                    <option value="+62">+62 (ID)</option>
+                    <option value="+52">+52 (MX)</option>
+                    <option value="+61">+61 (AU)</option>
+                    <option value="+64">+64 (NZ)</option>
+                    <option value="+971">+971 (AE)</option>
+                    <option value="+41">+41 (CH)</option>
+                </select>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{6,14}" placeholder="e.g. 1234567890" required>
+            </div>
 
-      <!-- Terms and conditions checkbox -->
-      <div class="checkbox-container">
-        <input type="checkbox" id="terms" name="terms" required>
-        <label for="terms">Agree to Terms & Conditions</label>
-      </div>
+            <!-- Destination dropdown -->
+            <label for="destination">Destination:</label>
+            <div id="destinationDropdown" class="custom-dropdown">
+                <div class="custom-dropdown-selected">
+                    <span>-- Select a Destination --</span>
+                    <span class="arrow">&#x25BC;</span>
+                </div>
+                <div class="custom-dropdown-options"></div>
+            </div>
 
-      <!-- Price summary display -->
-      <div id="priceSummary" class="price-summary"></div>
-      
-      <!-- Submit button -->
-      <button type="submit">Submit Inquiry</button>
-      <div id="formMessage" style="margin-top: 10px;"></div>
-    </form>
-  </div>
+            <!-- Display flag next to selected destination -->
+            <div id="flagDisplay"></div>
 
-  <script src="contact.js"></script>
+            <!-- Travel date -->
+            <label for="travelDate">Travel Date:</label>
+            <input type="date" id="travelDate" name="travelDate" required>
+            <div id="dateNote" style="font-size: 14px; color: grey;"></div>
+
+            <!-- Number of travellers -->
+            <label for="travellers">Number of Travellers:</label>
+            <input type="number" id="travellers" name="travellers" min="1" max="10" required>
+
+            <!-- Special requests -->
+            <label for="specialRequests">Special Requests:</label>
+            <textarea id="specialRequests" name="specialRequests"></textarea>
+
+            <!-- Preferred communication method -->
+            <label for="commMode">Preferred Mode of Communication:</label>
+            <select id="commMode" name="commMode">
+                <option value="email">Email</option>
+                <option value="phone">Phone Call</option>
+                <option value="text">Text Message</option>
+            </select>
+
+            <!-- Emergency contact number -->
+            <label for="emergencyContact">Emergency Contact Number:</label>
+            <div class="phone-container">
+                <select id="emergencyCountryCode" name="emergencyCountryCode">
+                    <option value="+1">+1 (US/CA)</option>
+                    <option value="+44">+44 (UK)</option>
+                    <option value="+33">+33 (FR)</option>
+                    <option value="+39">+39 (IT)</option>
+                    <option value="+34">+34 (ES)</option>
+                    <option value="+31">+31 (NL)</option>
+                    <option value="+81">+81 (JP)</option>
+                    <option value="+66">+66 (TH)</option>
+                    <option value="+82">+82 (KR)</option>
+                    <option value="+62">+62 (ID)</option>
+                    <option value="+52">+52 (MX)</option>
+                    <option value="+61">+61 (AU)</option>
+                    <option value="+64">+64 (NZ)</option>
+                    <option value="+971">+971 (AE)</option>
+                    <option value="+41">+41 (CH)</option>
+                </select>
+                <input type="tel" id="emergencyContact" name="emergencyContact" pattern="[0-9]{6,14}" placeholder="e.g. 1234567890">
+            </div>
+
+            <!-- Add-on options -->
+            <fieldset>
+                <legend>Add-ons (per traveller):</legend>
+                <div class="addon-container">
+                    <label class="addon-label">
+                        <input type="checkbox" class="addon" value="insurance" id="insurance">
+                        <span>Travel Insurance (+£50)</span>
+                    </label>
+                    <label class="addon-label">
+                        <input type="checkbox" class="addon" value="tour" id="tour">
+                        <span>Guided City Tour (+£100)</span>
+                    </label>
+                    <label class="addon-label">
+                        <input type="checkbox" class="addon" value="meal" id="meal">
+                        <span>Premium Meals (+£70)</span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <!-- Terms and conditions checkbox -->
+            <div class="checkbox-container">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">Agree to Terms & Conditions</label>
+            </div>
+
+            <!-- Price summary display -->
+            <div id="priceSummary" class="price-summary"></div>
+
+            <!-- Submit button -->
+            <button type="submit">Submit Inquiry</button>
+            <div id="formMessage" style="margin-top: 10px;"></div>
+        </form>
+    </div>
+
+    <script src="contact.js"></script>
 </body>
 </html>
