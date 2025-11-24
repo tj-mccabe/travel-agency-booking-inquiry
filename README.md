@@ -1,6 +1,6 @@
 🌐 Booking Inquiry – Travel Agency
 
-My first web development project: A responsive travel booking inquiry webpage that allows users to select destinations, travel dates, number of travellers, and optional add-ons, with a live price calculation.
+My first personal web development project: A responsive travel booking inquiry webpage that allows users to select destinations, travel dates, number of travellers, and optional add-ons, with live price calculation.
 
 📝 Features
 
