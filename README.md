@@ -4,18 +4,18 @@ My first personal web development project: A responsive travel booking inquiry w
 
 📝 Features
 
-Custom dropdown for selecting destinations with flags
-Minimum travel date enforcement based on availability
-Add-on options (Travel Insurance, Guided Tours, Premium Meals)
-Live price calculation with discounts
-Form validation and submission confirmation
-Mobile-responsive design
+- Custom dropdown for selecting destinations with flags
+- Minimum travel date enforcement based on availability
+- Add-on options (Travel Insurance, Guided Tours, Premium Meals)
+- Live price calculation with discounts
+- Form validation and submission confirmation
+- Mobile-responsive design
 
 🛠 Technologies Used
 
-Languages: HTML5, CSS3, JavaScript, jQuery
-Tools: VS Code / any code editor
-Design: Flexbox, responsive media queries
+- Languages: HTML5, CSS3, JavaScript, jQuery
+- Tools: VS Code / any code editor
+- Design: Flexbox, responsive media queries
 
 📂 Project Structure
 
@@ -40,8 +40,8 @@ Optional: Use VS Code with the Live Server extension for live reloading while ed
 
 🎯 What I Learned
 
-DOM manipulation and event handling with JavaScript/jQuery
-Form validation and live calculation logic
-Responsive layout design for desktop and mobile
-Structuring a dynamic webpage with CSS and JS separation
-Learned how to organize my first full project independently.
+- DOM manipulation and event handling with JavaScript/jQuery
+- Form validation and live calculation logic
+- Responsive layout design for desktop and mobile
+- Structuring a dynamic webpage with CSS and JS separation
+- Learned how to organize my first full project independently.
