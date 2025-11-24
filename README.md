@@ -19,13 +19,7 @@ My first personal web development project: A responsive travel booking inquiry w
 
 🚀 How to Run
 
-1. Clone the repository:
-   git clone https://github.com/your-username/booking-inquiry.git
-2. Navigate to the project folder:
-   cd booking-inquiry
-3. Open the `contact.html` file in your preferred web browser.
-
-Optional: Use VS Code with the Live Server extension for live reloading while editing.
+Easiest method - Use VS Code with the Live Server extension for live reloading while editing.
 
 🎯 What I Learned
 
